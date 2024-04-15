@@ -1,16 +1,24 @@
 @import "./vars";
+
 @mixin H1Regular {
   color: #F0F0F0;
-  font-family: Inter, 'sans-serif';
+  font-family: var(--font-inter), 'sans-serif';
   font-size: 96px;
   font-weight: 400;
   text-align: center;
 
   @media (max-width: $mobile) {
-    font-family: Inter, sans-serif;
+    font-family: var(--font-inter), sans-serif;
     font-size: 40px;
     font-weight: 400;
     line-height: 48.41px;
     text-align: center;
   }
+}
+
+@mixin TextRegular {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  text-align: left;
 }

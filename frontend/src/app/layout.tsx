@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import "./globals.scss";
 import {WithQueryClientProvider} from "@/app/providers/WithQueryClient";
-
+import { Inter } from 'next/font/google'
 export const metadata: Metadata = {
 };
+
+const inter = Inter({ subsets: ['latin'], variable: "--font-inter"})
 
 export default function RootLayout({
   children,
@@ -11,7 +13,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en"
+      className={`${inter.variable}`}
+    >
       <body>
       <WithQueryClientProvider>
           {children}
