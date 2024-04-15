@@ -1,7 +1,6 @@
 export {queryClient} from './queryClient'
 
 export type {
-    createOrderRequest,
     CreateOrderRequestErrorResponseBody,
     CreateOrderRequestProps,
     CreateOrderRequestPropsCartItem,
@@ -9,13 +8,24 @@ export type {
 } from './requests/order'
 
 export type {
-    getProductsRequest,
     GetProductsRequestProps,
     GetProductsRequestResponseBody,
     GetProductsRequestResponseBodyItem
 } from './requests/products'
 
 export type {
-    getReviewsRequest,
+
     GetReviewsRequestResponseBody
+} from './requests/reviews'
+
+export {
+    createOrderRequest,
+} from './requests/order'
+
+export {
+    getProductsRequest,
+} from './requests/products'
+
+export {
+    getReviewsRequest,
 } from './requests/reviews'
