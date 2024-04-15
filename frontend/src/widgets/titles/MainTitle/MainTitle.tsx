@@ -4,7 +4,6 @@ import {Container} from "@/shared/ui/container";
 
 interface MainTitleProps {
     titleText:string
-
 }
 
 export const MainTitle: FC<MainTitleProps> = (props) => {
