@@ -2,49 +2,26 @@
 import {FC} from "react";
 import {Container} from "@/shared/ui/container";
 import {useReviewsQuery} from "../lib";
-import { sanitize } from 'dompurify';
+import styles from './Reviews.module.scss'
 interface ReviewsProps {
 
 }
 
 export const Reviews: FC<ReviewsProps> = (props) => {
-  const reviewsQuery = useReviewsQuery();
-
-  const reviews = reviewsQuery.data;
-
-  const sanitizedReviewsData = reviews?.data.map(review => {
-    return {
-      ...review,
-      text: sanitize(review.text)
-    }
-  })
+  const {sanitizedReviewsData} = useReviewsQuery();
 
   return (
     <Container>
       <div
-        style={{
-          display: 'flex',
-          flexWrap: 'wrap',
-          justifyContent:'center',
-          alignItems:'stretch',
-          gap: 34,
-          marginTop: 105
-        }}
+        className={styles.Reviews}
       >
         {sanitizedReviewsData?.map((review, index) => (
           <div
+            className={styles.Reviews__item}
             // id поломан со стороны backend присылаются два одинаковых id, поэтому использован index
             key={index}
-            style={{
-              maxWidth: 468,
-              background: '#D9D9D9',
-              flexGrow: 1,
-              borderRadius:15,
-              padding: "20px 27px"
-            }}
             dangerouslySetInnerHTML={{__html: review.text}}
-          >
-          </div>
+          />
         ))}
       </div>
     </Container>
