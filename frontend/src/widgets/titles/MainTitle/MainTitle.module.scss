@@ -1,0 +1,13 @@
+.MainTitle {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  width: 100%;
+  background: #777777;
+  border-radius: 15px;
+  margin-top: 55px;
+  @media (max-width: 480px) {
+    margin-top: 13px;
+
+  }
+}
