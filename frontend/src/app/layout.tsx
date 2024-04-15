@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.scss";
+import {WithQueryClientProvider} from "@/app/providers/WithQueryClient";
 
 export const metadata: Metadata = {
 };
@@ -12,7 +13,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-      {children}
+      <WithQueryClientProvider>
+          {children}
+      </WithQueryClientProvider>
       </body>
     </html>
   );

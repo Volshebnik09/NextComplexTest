@@ -1,4 +1,4 @@
-import {ApiInstance} from "./ApiInstance";
+import {ApiInstance} from "../ApiInstance";
 
 export interface GetProductsRequestProps {
     page: number,
